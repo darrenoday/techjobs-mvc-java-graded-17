@@ -47,6 +47,7 @@ public class ListController {
         return "list";
     }
 
+
     @GetMapping(value = "jobs")
     public String listJobsByColumnAndValue(Model model, @RequestParam String column, @RequestParam(required = false) String value) {
         ArrayList<Job> jobs;
@@ -61,5 +62,5 @@ public class ListController {
 
         return "list-jobs";
     }
-}
+};
 
