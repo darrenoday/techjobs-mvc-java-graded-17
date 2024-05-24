@@ -8,7 +8,7 @@
 
 <div class="container body-content">
 
-  <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+  <h1 th:text="'Jobs With ' + ${searchType} + ' : ' + ${searchTerm}"></h1>
 
   <form th:action="@{/search/results}" method = "post">
     <h2>Search by:</h2>
@@ -38,7 +38,48 @@
 
   <!-- TODO #4 - Loop over the search results to display all job fields. -->
 
-</div>
+    <div>
 
+
+        <div th:if="${jobs != null}">
+            <table  class="job-listing" th:each="job : ${jobs}">
+
+                <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td th:text="${job.id}"></td>
+                </tr>
+                <tr>
+                    <td>Position</td>
+                    <td th:text="${job.name}"></td>
+                    </tr>
+                    <tr>
+                    <td>Employer</td>
+                        <td th:text="${job.employer}"></td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td th:text="${job.location}"></td>
+                   </tr>
+                <tr>
+                    <td>Skill</td>
+                    <td th:text="${job.positionType}"></td>
+                </tr>
+                    <tr>
+                    <td>Core Competency</td>
+                        <td th:text="${job.coreCompetency}"></td>
+                </tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+
+        <div th:if="${jobs == null || jobs.size() == 0}">
+            <p>No results found.</p>
+        </div>
+</div>
+</div>
 </body>
 </html>
