@@ -42,8 +42,7 @@
 
 
         <div th:if="${jobs != null}">
-            <table  class="job-listing" th:each="job : ${jobs}">
-
+            <table  class='job-listing' th:each="job : ${jobs}">
                 <tbody>
                 <tr>
                     <td>ID</td>
@@ -52,26 +51,23 @@
                 <tr>
                     <td>Position</td>
                     <td th:text="${job.name}"></td>
-                    </tr>
-                    <tr>
+                </tr>
+                <tr>
                     <td>Employer</td>
-                        <td th:text="${job.employer}"></td>
+                    <td th:text="${job.employer}"></td>
                 </tr>
                 <tr>
                     <td>Location</td>
                     <td th:text="${job.location}"></td>
-                   </tr>
+                </tr>
                 <tr>
                     <td>Skill</td>
                     <td th:text="${job.positionType}"></td>
                 </tr>
-                    <tr>
+                <tr>
                     <td>Core Competency</td>
-                        <td th:text="${job.coreCompetency}"></td>
+                    <td th:text="${job.coreCompetency}"></td>
                 </tr>
-
-
-
                 </tbody>
             </table>
         </div>
